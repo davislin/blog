@@ -2,7 +2,7 @@
 layout: post
 title: c＃用hwnd截圖，無論是否被遮擋?
 ---
-{% highlight csharp %}
+{% highlight csharp linenos %}
  [DllImport("gdi32.dll")]
  public static extern IntPtr CreateCompatibleDC(
  IntPtr hdc // handle to DC
@@ -32,10 +32,7 @@ title: c＃用hwnd截圖，無論是否被遮擋?
  public static extern IntPtr GetWindowDC(
  IntPtr hwnd // Window to copy,Handle to the window that will be copied.
  );
-#region 使用PrintWindow方法抓取窗口，無論控件是否被遮擋
 /// 
-/// 窗口的截圖，窗口被遮擋時也可以正確截圖，使用PrintWindow方法  
-///   
 ///需要被截圖的窗口  
 /// 窗口的截圖，控件被遮擋時也可以正確截圖  
 private static Bitmap GetWindow(IntPtr hWnd)
@@ -52,6 +49,5 @@ private static Bitmap GetWindow(IntPtr hWnd)
     DeleteDC(hmemdc);//刪除用過的對象  
     return bmp;
 }
-#endregion 
 
 {% endhighlight %}
