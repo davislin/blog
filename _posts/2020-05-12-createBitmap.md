@@ -2,7 +2,7 @@
 layout: post
 title: c＃用hwnd截圖，無論是否被遮擋?
 ---
-{% highlight cs %}
+{% highlight c# %}
  [DllImport("gdi32.dll")]
  public static extern IntPtr CreateCompatibleDC(
  IntPtr hdc // handle to DC
